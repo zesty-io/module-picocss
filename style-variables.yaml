@@ -1,0 +1,57 @@
+
+  - referenceName: "primary-color"
+    name: "Primary Color"
+    sort: 1
+    type: "color"
+    value: "#ff8000"
+    description: "The primary color for elements"
+    category: 1
+    options: null
+  - referenceName: "secondary-color"
+    name: "Secondary Color"
+    sort: 1
+    type: "color"
+    value: "#00ffff"
+    description: "The secondary color for elements"
+    category: 1
+    options: null
+  - referenceName: "paragraph-font-color"
+    name: "Paragraph Color"
+    sort: 1
+    type: "dropdown"
+    value: "contrast-color"
+    description: "The text color of paragraphs (<p>)"
+    category: 2
+    options: "{\"contrast-color\":\"Contrast Color\",\"primary-color\":\"Primary Color\",\"secondary-color\":\"Secondary Color\"}"
+  - referenceName: "headings-font-color"
+    name: "Headings Font Color"
+    sort: 1
+    type: "dropdown"
+    value: "primary-color"
+    description: "The text color of all headings (<h1-6>)"
+    category: 2
+    options: "{\"contrast-color\":\"Contrast Color\",\"primary-color\":\"Primary Color\",\"secondary-color\":\"Secondary Color\"}"
+  - referenceName: "dk-color"
+    name: "Dark Color"
+    sort: 1
+    type: "color"
+    value: "#212529"
+    description: "The background color for dark mode"
+    category: 1
+    options: null
+  - referenceName: "li-color"
+    name: "Light Color"
+    sort: 1
+    type: "color"
+    value: "#f8f9fa"
+    description: "The background color for light mode"
+    category: 1
+    options: null
+  - referenceName: "contrast-color"
+    name: "Contrast Color"
+    sort: 1
+    type: "color"
+    value: "#5A5A5A"
+    description: "The contrast color for elements"
+    category: 1
+    options: null

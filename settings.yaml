@@ -1,0 +1,10 @@
+  - category: "developer"
+    key: "auto_include_js_in_head"
+    keyFriendly: "Automatically include JavaScript in head"
+    value: "0"
+    admin: null
+    parsleyAccess: null
+    dataType: "checkbox"
+    options: "0,1"
+    tips: ""
+ 
