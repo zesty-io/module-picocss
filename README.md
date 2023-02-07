@@ -18,6 +18,7 @@
 2. Search for `Variables` or go line `64`.
 ![image](https://user-images.githubusercontent.com/114006998/217044748-8ac29078-dadd-47aa-929a-d08cd2a620da.png)
 3. Here is the list of the style-variables used
+
 | Pico Variable | Zesty Variable | Use | 
 | ------------- | ------------- | ------------- |
 |  black  |  dk-color  |  Base color for dark theme  |
