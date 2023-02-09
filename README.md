@@ -1,18 +1,6 @@
 # PicoCSS Module
 - Module PicoCSS Framework
 
-## Using Theme Switcher 
-> For theme switcher informtion and uses.
-1. Selecting `Auto` will change the background color based on the User's device settings.
-<img src="https://user-images.githubusercontent.com/114006998/217041495-ffe33b69-b319-4b98-8c5b-ce3f40fed8e2.png" width="75%" height="300">
-<br>
-2. Selecting `Light` will change the background color to light themed.
-<img src="https://user-images.githubusercontent.com/114006998/217041741-d04ad4cc-c436-4193-bab5-c2ad951d2edc.png" width="75%" height="300">
-<br>
-3. Selecting `Dark` will change the background color to dark themed.
-<img src="https://user-images.githubusercontent.com/114006998/217041851-47cf3166-fd82-4955-b6b0-7e6e1e470ec4.png" width="75%" height="300">
-<br>
-
 ## Style Variables
 > For style variables declaration.
 1. Go to `Code` -> `pico-module-theme.css`.
