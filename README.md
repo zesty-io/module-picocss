@@ -1,7 +1,7 @@
 # PicoCSS Module
 - Module PicoCSS Framework
 
-## Style Variables
+<!---- ## Style Variables
 > For style variables declaration.
 1. Go to `Code` -> `pico-module-theme.css`.
 2. Search for `Variables` or go line `64`.
@@ -18,9 +18,9 @@
 |  text-color  |  paragraph-font-color  |  Base color for paragraph texts  |
 |  header-color  |  headings-custom-color  |  Base color for headings texts  |
 |  text-font  |  font-family-base |  The font family base of all text elements  |
-|  header-font  |  headings-font-base  |  The font family base of all headings (<h1-6>)  |
+|  header-font  |  headings-font-base  |  The font family base of all headings (<h1-6>)  | --->
 
-## Style Variables value
+## Style Variables
 > For setting the style variables' value.
 
 ### Setting the value of dark-color
