@@ -57,7 +57,7 @@
 
 2. Click the `Color picker` icon besides the `@primary` and choose a color -> Click `Ok`.
 
-<img src="https://user-images.githubusercontent.com/114006998/217608421-b66cb69e-7a66-4b18-a32b-85a2a1e50c89.png" width="90%" height="300"> 
+<img src="https://user-images.githubusercontent.com/114006998/217850287-bd2d471b-9123-4c7b-b235-9388d3528bb2.png" width="90%" height="300"> 
 <br>
 
 3. Click `Save Settings` or `Ctrl + S`.
@@ -71,7 +71,7 @@
 
 2. Click the `Color picker` icon besides the `@secondary` and choose a color -> Click `Ok`.
 
-<img src="https://user-images.githubusercontent.com/114006998/217608580-9852273c-6e9d-4b7b-97bd-b6151a180856.png" width="90%" height="400">
+<img src="https://user-images.githubusercontent.com/114006998/217850625-b7c642fe-0a89-4e67-9a20-634f9f3cd5fd.png" width="90%" height="400">
 <br>
 
 3. Click `Save Settings` or `Ctrl + S`.
