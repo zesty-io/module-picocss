@@ -1,57 +1,81 @@
 
-  - referenceName: "primary-color"
-    name: "Primary Color"
-    sort: 1
-    type: "color"
-    value: "#ff8000"
-    description: "The primary color for elements"
-    category: 1
-    options: null
-  - referenceName: "secondary-color"
-    name: "Secondary Color"
-    sort: 1
-    type: "color"
-    value: "#00ffff"
-    description: "The secondary color for elements"
-    category: 1
-    options: null
   - referenceName: "paragraph-font-color"
     name: "Paragraph Color"
     sort: 1
     type: "dropdown"
-    value: "contrast-color"
+    value: "secondary"
     description: "The text color of paragraphs (<p>)"
     category: 2
-    options: "{\"contrast-color\":\"Contrast Color\",\"primary-color\":\"Primary Color\",\"secondary-color\":\"Secondary Color\"}"
-  - referenceName: "headings-font-color"
-    name: "Headings Font Color"
+    options: "{\"accent1-color\":\"Accent 1\",\"accent2-color\":\"Accent 2\",\"dark\":\"Dark\",\"light\":\"Light\",\"primary\":\"Primary\",\"secondary\":\"Secondary\"}"
+  - referenceName: "headings-custom-color"
+    name: "Header Color"
     sort: 1
     type: "dropdown"
-    value: "primary-color"
+    value: "primary"
     description: "The text color of all headings (<h1-6>)"
     category: 2
-    options: "{\"contrast-color\":\"Contrast Color\",\"primary-color\":\"Primary Color\",\"secondary-color\":\"Secondary Color\"}"
-  - referenceName: "dk-color"
-    name: "Dark Color"
+    options: "{\"accent1-color\":\"Accent 1\",\"accent2-color\":\"Accent 2\",\"dark\":\"Dark\",\"light\":\"Light\",\"primary\":\"Primary\",\"secondary\":\"Secondary\"}"
+  - referenceName: "headings-font-base"
+    name: "Header Font"
+    sort: 1
+    type: "font_picker"
+    value: "Abyssinica SIL:400"
+    description: "The font family base of all headings (<h1-6>)"
+    category: 2
+    options: null
+  - referenceName: "font-family-base"
+    name: "Text Font"
+    sort: 1
+    type: "font_picker"
+    value: "ABeeZee:400"
+    description: "The font family base of all text elements"
+    category: 2
+    options: null
+  - referenceName: "primary"
+    name: "Primary"
     sort: 1
     type: "color"
-    value: "#212529"
+    value: "#FFA500"
+    description: "Primary color for elements"
+    category: 1
+    options: null
+  - referenceName: "secondary"
+    name: "Secondary"
+    sort: 1
+    type: "color"
+    value: "#ff8080"
+    description: "Primary color for elements"
+    category: 1
+    options: null
+  - referenceName: "dark"
+    name: "Dark"
+    sort: 2
+    type: "color"
+    value: "#5A5A5A"
     description: "The background color for dark mode"
     category: 1
     options: null
-  - referenceName: "li-color"
-    name: "Light Color"
-    sort: 1
+  - referenceName: "light"
+    name: "Light"
+    sort: 2
     type: "color"
-    value: "#f8f9fa"
+    value: "#F5F5F5"
     description: "The background color for light mode"
     category: 1
     options: null
-  - referenceName: "contrast-color"
-    name: "Contrast Color"
-    sort: 1
+  - referenceName: "accent1-color"
+    name: "Accent 1"
+    sort: 3
     type: "color"
-    value: "#5A5A5A"
-    description: "The contrast color for elements"
+    value: "#004080"
+    description: "Accent 1 color"
+    category: 1
+    options: null
+  - referenceName: "accent2-color"
+    name: "Accent 2"
+    sort: 3
+    type: "color"
+    value: "#00ffff"
+    description: "Accent 2 color"
     category: 1
     options: null

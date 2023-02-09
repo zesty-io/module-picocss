@@ -4,88 +4,96 @@ $grey-50: hsl($grey-hue, 20%, 94%) !default;
 $grey-100: hsl($grey-hue, 18%, 86%) !default;
 $grey-200: hsl($grey-hue, 16%, 77%) !default;
 $grey-300: hsl($grey-hue, 14%, 68%) !default;
-$grey-400: hsl($grey-hue, 12%, 59%) !default;
 $grey-500: hsl($grey-hue, 10%, 50%) !default;
 $grey-600: hsl($grey-hue, 15%, 41%) !default;
 $grey-700: hsl($grey-hue, 20%, 32%) !default;
 $grey-800: hsl($grey-hue, 25%, 23%) !default;
 $grey-900: hsl($grey-hue, 30%, 15%) !default;
 
-// Primary
-$primary-hue: 300 !default;
-$primary-50: hsl($primary-hue, 90%, 94%) !default;
-$primary-100: hsl($primary-hue, 88%, 86%) !default;
-$primary-200: hsl($primary-hue, 86%, 77%) !default;
-$primary-300: hsl($primary-hue, 84%, 68%) !default;
-$primary-400: hsl($primary-hue, 82%, 59%) !default;
-$primary-500: hsl($primary-hue, 80%, 50%) !default;
-//$primary-600: hsl($primary-hue, 85%, 41%) !default;
-$primary-600: adjust-hue(#4caf50, 50);
-$primary-700: hsl($primary-hue, 90%, 32%) !default;
-$primary-800: hsl($primary-hue, 95%, 23%) !default;
-$primary-900: hsl($primary-hue, 100%, 15%) !default;
-
 // Amber
 $amber-50: #fff8e1 !default;
 $amber-100: #ffecb3 !default;
-$amber-200: #ffe082 !default;
 $amber-300: #ffd54f !default;
 $amber-400: #ffca28 !default;
-$amber-500: #ffc107 !default;
-$amber-600: #ffb300 !default;
 $amber-700: #ffa000 !default;
 $amber-800: #ff8f00 !default;
 $amber-900: #ff6f00 !default;
 
 // Green
-$green-50: #e8f5e9 !default;
-$green-100: #c8e6c9 !default;
-$green-200: #a5d6a7 !default;
-$green-300: #81c784 !default;
-$green-400: #66bb6a !default;
-$green-500: #4caf50 !default;
 $green-600: #43a047 !default;
 $green-700: #388e3c !default;
 $green-800: #2e7d32 !default;
-$green-900: #1b5e20 !default;
 
 // Red
-$red-50: #ffebee !default;
-$red-100: #ffcdd2 !default;
-$red-200: #ef9a9a !default;
-$red-300: #e57373 !default;
-$red-400: #ef5350 !default;
-$red-500: #f44336 !default;
-$red-600: #e53935 !default;
 $red-700: #d32f2f !default;
 $red-800: #c62828 !default;
 $red-900: #b71c1c !default;
 
-//color variables
-$black: $dk-color;
-$white: $li-color;
-$primary: $primary-color;
-$secondary: $secondary-color;
-$contrast: $contrast-color;
+// THEME COLORS
+$primary-color: $primary;
+$secondary-color: $secondary;
+$black: $dark;
+$white: $light;
 
 //font variables
 $text-color: $paragraph-font-color;
-$header-color: $headings-font-color;
+$header-color: $headings-custom-color;
+$font-base: $font-family-base;
+$header-font: $headings-font-base;
+
+$theme-colors: (
+  "primary":    $primary-color,
+  "secondary":  $secondary-color,
+  "accent1-color": $accent1-color,
+  "accent2-color": $accent2-color,
+  "light":      $light,
+  "dark":       $dark
+) !default;
+
+@function map-get-multiple($map, $values) {
+  $result: ();
+  @each $key, $value in $map {
+    @if (index($values, $key) != null) {
+      $result: map-merge(
+        $result,
+        (
+          $key: $value,
+        )
+      );
+    }
+  }
+  @return $result;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font;
+  color: map-get($theme-colors,$headings-custom-color);
+}
+
+address,
+blockquote,
+dl,
+figure,
+form,
+ol,
+p,
+pre,
+table,
+ul {
+  font-family: $font-base;
+  color: map-get($theme-colors,$paragraph-font-color);
+}
 
 /////////// DARK ////////////
 // Default: Dark theme
 [data-theme="dark"],
 :root:not([data-theme="light"]) {
   --background-color: #{mix($black, $grey-900, 37.5%)};
-
-  // Texts colors
-  --color: #{$text-color};
-  --h1-color: #{$header-color};
-  --h2-color: #{mix($grey-100, $grey-50)};
-  --h3-color: #{$grey-100};
-  --h4-color: #{mix($grey-200, $grey-100)};
-  --h5-color: #{$grey-200};
-  --h6-color: #{mix($grey-300, $grey-200)};
 
   // Muted colors
   --muted-color: #{$grey-500};
@@ -94,7 +102,7 @@ $header-color: $headings-font-color;
   // Primary colors
   --primary: #{$primary};
   --primary-hover: #{darken($primary,10%)};
-  --primary-focus: #{rgba($primary-600, 0.25)};
+  --primary-focus: #{rgba($primary, 0.25)};
   --primary-inverse: #{$white};
 
   // Secondary colors
@@ -102,12 +110,6 @@ $header-color: $headings-font-color;
   --secondary-hover: #{darken($secondary,70%)};
   --secondary-focus: #{rgba($grey-600, 0.125)};
   --secondary-inverse: #{$white};
-
-  // Contrast colors
-  --contrast: #{$contrast};
-  --contrast-hover: #{$white};
-  --contrast-focus: #{rgba($contrast, 0.25)};
-  --contrast-inverse: #{$black};
 
   // Highlighted text (<mark>)
   --mark-background-color: #{mix($grey-300, $amber-300)};
@@ -165,8 +167,6 @@ $header-color: $headings-font-color;
   // Code
   --code-background-color: #{mix($black, $grey-900, 12.5%)};
   --code-color: var(--muted-color);
-  --code-kbd-background-color: var(--contrast);
-  --code-kbd-color: var(--contrast-inverse);
   --code-tag-color: #{hsl(330, 30%, 50%)};
   --code-property-color: #{hsl(185, 30%, 50%)};
   --code-value-color: #{hsl(40, 10%, 50%)};
@@ -211,10 +211,6 @@ $header-color: $headings-font-color;
   // Loading ([aria-busy=true])
   --loading-spinner-opacity: 0.5;
 
-  // Tooltip ([data-tooltip])
-  --tooltip-background-color: var(--contrast);
-  --tooltip-color: var(--contrast-inverse);
-
   // Icons
   --icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{to-rgb($white)}' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   --icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{to-rgb($grey-300)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -238,15 +234,6 @@ $header-color: $headings-font-color;
 :root:not([data-theme="dark"]) {
   --background-color: #{$white};
 
-  // Texts colors
-  --color: #{$text-color};
-  --h1-color: #{$header-color};
-  --h2-color: #{mix($grey-900, $grey-800)};
-  --h3-color: #{$grey-800};
-  --h4-color: #{mix($grey-800, $grey-700)};
-  --h5-color: #{$grey-700};
-  --h6-color: #{mix($grey-700, $grey-600)};
-
   // Muted colors
   --muted-color: #{$grey-500};
   --muted-border-color: #{$grey-50};
@@ -254,7 +241,7 @@ $header-color: $headings-font-color;
   // Primary colors
   --primary: #{$primary};
   --primary-hover: #{darken($primary,10%)};
-  --primary-focus: #{rgba($primary-600, 0.25)};
+  --primary-focus: #{rgba($primary, 0.25)};
   --primary-inverse: #{$black};
 
   // Secondary colors
@@ -262,12 +249,6 @@ $header-color: $headings-font-color;
   --secondary-hover: #{darken($secondary,70%)};
   --secondary-focus: #{rgba($grey-600, 0.125)};
   --secondary-inverse: #{$white};
-  
-  // Contrast colors
-  --contrast: #{$contrast};
-  --contrast-hover: #{$black};
-  --contrast-focus: #{rgba($contrast, 0.125)};
-  --contrast-inverse: #{$white};
 
   // Highlighted text (<mark>)
   --mark-background-color: #{mix($amber-100, $amber-50)};
@@ -325,8 +306,6 @@ $header-color: $headings-font-color;
   // Code
   --code-background-color: #{$grey-50};
   --code-color: var(--muted-color);
-  --code-kbd-background-color: var(--contrast);
-  --code-kbd-color: var(--contrast-inverse);
   --code-tag-color: #{hsl(330, 40%, 50%)};
   --code-property-color: #{hsl(185, 40%, 40%)};
   --code-value-color: #{hsl(40, 20%, 50%)};
@@ -369,10 +348,6 @@ $header-color: $headings-font-color;
 
   // Loading ([aria-busy=true])
   --loading-spinner-opacity: 0.5;
-
-  // Tooltip ([data-tooltip])
-  --tooltip-background-color: var(--contrast);
-  --tooltip-color: var(--contrast-inverse);
 
   // Icons
   --icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{to-rgb($white)}' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
